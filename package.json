@@ -1,17 +1,23 @@
 {
   "name": "binary-parser",
-  "version": "1.3.2",
+  "version": "2.0.0",
   "description": "Blazing-fast binary parser builder",
   "main": "lib/binary_parser.js",
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "mocha": "^3.5.3",
-    "prettier": "^1.9.2"
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1",
+    "mocha": "^6.1.3",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.24.1",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
   },
   "scripts": {
-    "fmt": "npx prettier --write '{lib,test,example}/**/*.js'",
-    "check-fmt": "npx prettier --list-different '{lib,test,example}/**/*.js'",
-    "test": "npx mocha --reporter spec",
+    "test": "jest",
+    "test:old": "mocha --reporter spec",
+    "lint": "eslint lib",
     "cover": "npx istanbul cover --report html node_modules/.bin/_mocha"
   },
   "keywords": [
@@ -28,14 +34,20 @@
     "email": "keichi.t@me.com",
     "url": "https://keichi.net/"
   },
+  "contributors": [
+    {
+      "name": "David Schwarzmann",
+      "email": "dev@dschwarz.codes",
+      "url": "https://dschwarz.codes/"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/keichi/binary-parser.git"
+    "url": "http://github.com/wachiwi/binary-parser.git"
   },
-  "bugs": "http://github.com/keichi/binary-parser/issues",
-  "dependencies": {},
+  "bugs": "http://github.com/wachiwi/binary-parser/issues",
   "engines": {
-      "node": ">=5.10.0"
+    "node": ">=9"
   }
 }
