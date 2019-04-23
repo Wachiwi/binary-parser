@@ -1,5 +1,5 @@
 const util = require("util");
-const Parser = require("../lib/binary_parser").Parser;
+const Parser = require("../lib/binary_parser");
 
 describe("parser injections", () => {
   test("scope injections into single parser", () => {
