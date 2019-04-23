@@ -1,0 +1,21 @@
+language: node_js
+cache: yarn
+node_js:
+  - "node"
+  - "lts/"
+  - "7"
+
+jobs:
+  include:
+    - stage: lint
+    - script: yarn lint
+    - stage: test
+    - before_script:
+      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - chmod +x ./cc-test-reporter
+      - ./cc-test-reporter before-build
+    - script:
+        - yarn test
+        - yarn cover
+    - after_script:
+        - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
