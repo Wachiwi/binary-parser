@@ -1,8 +1,8 @@
 const util = require("util");
 const Parser = require("../lib/binary_parser");
 
-describe("parser injections", () => {
-  test("scope injections into single parser", () => {
+describe('parser injections', () => {
+  test('scope injections into single parser', () => {
     let funcs = {
       custom_func: jest.fn(() => 1+1)
     }
